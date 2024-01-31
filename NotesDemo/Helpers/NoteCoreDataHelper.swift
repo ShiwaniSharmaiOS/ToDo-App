@@ -11,34 +11,22 @@ import CoreData
 class NoteCoreDataHelper {
     
     private(set) static var count: Int = 0
-    static func createNoteInCoreData(
-        noteToBeCreated:          NoteModel,
-        intoManagedObjectContext: NSManagedObjectContext) {
+    
+    static func createNoteInCoreData(noteToBeCreated: NoteModel, intoManagedObjectContext: NSManagedObjectContext) {
         
         // Let’s create an entity and new note record
             let noteEntity = NSEntityDescription.entity(
-                forEntityName: "Note",
-                in:            intoManagedObjectContext)!
+                forEntityName: "Note", in: intoManagedObjectContext)!
 
-            let newNoteToBeCreated = NSManagedObject(
-                entity:     noteEntity,
-                insertInto: intoManagedObjectContext)
+            let newNoteToBeCreated = NSManagedObject(entity: noteEntity, insertInto: intoManagedObjectContext)
 
-            newNoteToBeCreated.setValue(
-                noteToBeCreated.noteId,
-                forKey: "noteId")
+            newNoteToBeCreated.setValue(noteToBeCreated.noteId, forKey: "noteId")
 
-            newNoteToBeCreated.setValue(
-                noteToBeCreated.noteTitle,
-                forKey: "noteTitle")
+            newNoteToBeCreated.setValue(noteToBeCreated.noteTitle, forKey: "noteTitle")
 
-            newNoteToBeCreated.setValue(
-                noteToBeCreated.noteText,
-                forKey: "noteText")
+            newNoteToBeCreated.setValue(noteToBeCreated.noteText, forKey: "noteText")
 
-            newNoteToBeCreated.setValue(
-                noteToBeCreated.noteTimeStamp,
-                forKey: "noteTimeStamp")
+            newNoteToBeCreated.setValue(noteToBeCreated.noteTimeStamp, forKey: "noteTimeStamp")
             do {
                 try intoManagedObjectContext.save()
                 count += 1
@@ -48,9 +36,7 @@ class NoteCoreDataHelper {
         }
     }
     
-    static func changeNoteInCoreData(
-        noteToBeChanged:        NoteModel,
-        inManagedObjectContext: NSManagedObjectContext) {
+    static func changeNoteInCoreData(noteToBeChanged: NoteModel, inManagedObjectContext: NSManagedObjectContext) {
         
         // read managed object
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
@@ -113,9 +99,7 @@ class NoteCoreDataHelper {
         return returnedNotes
     }
     
-    static func readNoteFromCoreData(
-        noteIdToBeRead:           UUID,
-        fromManagedObjectContext: NSManagedObjectContext) -> NoteModel? {
+    static func readNoteFromCoreData(noteIdToBeRead: UUID, fromManagedObjectContext: NSManagedObjectContext) -> NoteModel? {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
@@ -138,9 +122,7 @@ class NoteCoreDataHelper {
         }
     }
 
-    static func deleteNoteFromCoreData(
-        noteIdToBeDeleted:        UUID,
-        fromManagedObjectContext: NSManagedObjectContext) {
+    static func deleteNoteFromCoreData(noteIdToBeDeleted:UUID, fromManagedObjectContext: NSManagedObjectContext) {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         

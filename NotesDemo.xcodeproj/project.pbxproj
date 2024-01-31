@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		145BDEA52A73BDC700D47F75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BDEA42A73BDC700D47F75 /* SceneDelegate.swift */; };
+		189ADA362B69F58600ECE81F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189ADA352B69F58600ECE81F /* Login.storyboard */; };
+		189ADA382B6A216B00ECE81F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189ADA372B6A216B00ECE81F /* SignupViewController.swift */; };
+		189ADA3A2B6A336100ECE81F /* UserCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189ADA392B6A336100ECE81F /* UserCoreDataHelper.swift */; };
 		4B3E583921FA1772001C8C76 /* NotesDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E583721FA1772001C8C76 /* NotesDemo.xcdatamodeld */; };
 		4B7A016821F7041F00854E02 /* NoteCreateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A016721F7041F00854E02 /* NoteCreateChangeViewController.swift */; };
 		4B85A55221FAD00200933413 /* NoteDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B85A55121FAD00200933413 /* NoteDateHelper.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		145BDEA42A73BDC700D47F75 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		189ADA352B69F58600ECE81F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		189ADA372B6A216B00ECE81F /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		189ADA392B6A336100ECE81F /* UserCoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreDataHelper.swift; sourceTree = "<group>"; };
 		4B3E583821FA1772001C8C76 /* NotesDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesDemo.xcdatamodel; sourceTree = "<group>"; };
 		4B7A016721F7041F00854E02 /* NoteCreateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateChangeViewController.swift; sourceTree = "<group>"; };
 		4B85A55121FAD00200933413 /* NoteDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDateHelper.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 				4BDBF64321F5B09400616E04 /* MasterViewController.swift */,
 				4BDBF64521F5B09400616E04 /* DetailViewController.swift */,
 				4B7A016721F7041F00854E02 /* NoteCreateChangeViewController.swift */,
+				189ADA372B6A216B00ECE81F /* SignupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 				4BDBF64721F5B09400616E04 /* Main.storyboard */,
 				4BDBF64C21F5B09600616E04 /* LaunchScreen.storyboard */,
 				4B8B981521F6409C0048122E /* NoteTableViewCell.swift */,
+				189ADA352B69F58600ECE81F /* Login.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -88,6 +96,7 @@
 			children = (
 				4B85A55121FAD00200933413 /* NoteDateHelper.swift */,
 				4B85A55321FAD4BC00933413 /* NoteCoreDataHelper.swift */,
+				189ADA392B6A336100ECE81F /* UserCoreDataHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189ADA362B69F58600ECE81F /* Login.storyboard in Resources */,
 				4BDBF64E21F5B09600616E04 /* LaunchScreen.storyboard in Resources */,
 				4BDBF64B21F5B09600616E04 /* Assets.xcassets in Resources */,
 				4BDBF64921F5B09400616E04 /* Main.storyboard in Resources */,
@@ -224,8 +234,10 @@
 				4BDBF65621F5B2EE00616E04 /* NoteModel.swift in Sources */,
 				4B8B981621F6409C0048122E /* NoteTableViewCell.swift in Sources */,
 				4BDBF65821F5B3A000616E04 /* NoteStorage.swift in Sources */,
+				189ADA3A2B6A336100ECE81F /* UserCoreDataHelper.swift in Sources */,
 				4BDBF64621F5B09400616E04 /* DetailViewController.swift in Sources */,
 				4BDBF64421F5B09400616E04 /* MasterViewController.swift in Sources */,
+				189ADA382B6A216B00ECE81F /* SignupViewController.swift in Sources */,
 				4B7A016821F7041F00854E02 /* NoteCreateChangeViewController.swift in Sources */,
 				145BDEA52A73BDC700D47F75 /* SceneDelegate.swift in Sources */,
 				4B85A55421FAD4BC00933413 /* NoteCoreDataHelper.swift in Sources */,

@@ -7,6 +7,10 @@
 
 import UIKit
 
+var appDelegate:AppDelegate {
+    return UIApplication.shared.delegate as! AppDelegate
+}
+
 class MasterViewController: UITableViewController {
 
     //MARK: Variable
@@ -16,13 +20,13 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         // Core data initialization
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            let alert = UIAlertController(title: "Could note get app delegate",message: "Could note get app delegate, unexpected error occurred. Try again later.",preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK",style: .default))
-            self.present(alert, animated: true)
-
-            return
-        }
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            let alert = UIAlertController(title: "Could note get app delegate",message: "Could note get app delegate, unexpected error occurred. Try again later.",preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK",style: .default))
+//            self.present(alert, animated: true)
+//
+//            return
+//        }
 
         let managedContext = appDelegate.persistentContainer.viewContext
         NoteStorage.storage.setManagedContext(managedObjectContext: managedContext)

@@ -13,7 +13,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteTextTextView: UITextView!
     @IBOutlet weak var noteDate: UILabel!
-    @IBOutlet weak var noteImageView: UIImageView!
 
     //MARK: Configuration
     func configureView() {

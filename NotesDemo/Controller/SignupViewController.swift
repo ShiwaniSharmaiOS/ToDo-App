@@ -9,21 +9,22 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
+    //MARK: IBOutlets
+    @IBOutlet weak var signupTitle: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    let context = appDelegate.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+   
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signupTapped(_ sender: UIButton) {
+       // saveUser(phoneNumber: phoneTextField.text!, password: passwordTextField.text!)
     }
-    */
+    
 
 }
