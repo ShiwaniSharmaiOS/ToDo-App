@@ -15,7 +15,15 @@ class MainLandingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginTapped(_ sender: Any) {
+        let loginVC:LoginViewController = UIStoryboard(storyboard: .Login).initVC()
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    @IBAction func signupTapped(_ sender: Any) {
+        let signupVC:SignupViewController = UIStoryboard(storyboard: .Login).initVC()
+        self.navigationController?.pushViewController(signupVC, animated: true)
+    }
     /*
     // MARK: - Navigation
 

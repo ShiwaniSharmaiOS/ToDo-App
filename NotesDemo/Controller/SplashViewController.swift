@@ -11,19 +11,27 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        redirectUser()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func redirectUser(){
+        if UserDefaults.standard.bool(forKey: "isUserLogin"){
+            addRedirectionForHomePage()
+        } else{
+            addRedirectionForLoginPage()
+        }
     }
-    */
-
+    
+    private func addRedirectionForHomePage(){
+        let detailVC:DetailViewController = UIStoryboard(storyboard: .Main).initVC()
+        appDelegate.setNavigationToRoot(viewContoller: detailVC, animated: true)
+    }
+    
+    private func addRedirectionForLoginPage(){
+        let signupVC:MainLandingViewController = UIStoryboard(storyboard: .Login).initVC()
+        appDelegate.setNavigationToRoot(viewContoller: signupVC, animated: true)
+    }
 }
+
+

@@ -9,13 +9,13 @@ import Foundation
 import CoreData
 
 struct UserModel{
-    var phoneNumber: Int
-    var password: String
+    var phoneNumber: Int?
+    var password: String?
 }
 
 class UserCoreDataHelper {
     
-    func saveUser(data: UserModel, intoManagedObjectContext: NSManagedObjectContext) {
+    func saveUser(data: UserModel, intoManagedObjectContext: NSManagedObjectContext, completion:(Bool, String) -> Void) {
         let userEntity = NSEntityDescription.entity(
             forEntityName: "User", in: intoManagedObjectContext)!
         
@@ -26,8 +26,11 @@ class UserCoreDataHelper {
         
         do {
             try intoManagedObjectContext.save()
+            print(newUser)
+            completion(true, "")
         } catch let error as NSError {
             // TODO error handling
+            completion(false, error.localizedDescription)
             print("Could not save. \(error), \(error.userInfo)")
         }
         
@@ -44,7 +47,9 @@ class UserCoreDataHelper {
             let fetchedNotesFromCoreData = try fromManagedObjectContext.fetch(fetchRequest)
             fetchedNotesFromCoreData.forEach { (fetchRequestResult) in
                 let noteManagedObjectRead = fetchRequestResult as! NSManagedObject
-                returnedNotes.append(UserModel.init(phoneNumber: Int(noteManagedObjectRead.value(forKey: "number") as! Int64), password: noteManagedObjectRead.value(forKey: "password") as! String))
+                returnedNotes.append(UserModel.init(
+                    phoneNumber: Int(noteManagedObjectRead.value(forKey: "number") as? Int64 ?? 0),
+                    password: noteManagedObjectRead.value(forKey: "password") as? String))
             }
         } catch let error as NSError {
             // TODO error handling

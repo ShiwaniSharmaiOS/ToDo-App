@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var noteTitleLabel: UILabel!
@@ -40,6 +40,14 @@ class DetailViewController: UIViewController {
         }
     }
 
+    @IBAction func logoutTapped(_ sender: UIButton) {
+        showAlertWithTitle(title: "Are you sure you want to Log out? ", completion: {
+            UserDefaults.standard.set(false, forKey: "isUserLogin")
+            let networkVC:MainLandingViewController = UIStoryboard(storyboard: .Login).initVC()
+            appDelegate.setNavigationToRoot(viewContoller: networkVC, animated: true)
+        }, showCancel: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChangeNoteSegue" {
             let changeNoteViewController = segue.destination as! NoteCreateChangeViewController
